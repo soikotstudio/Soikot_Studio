@@ -1326,8 +1326,8 @@ img {
 
 .counter-section {
   z-index: 1;
-  padding-top: var(--padding--padding-xxl);
-  padding-bottom: var(--padding--padding-xl);
+  padding-top: 60px;
+  padding-bottom: 50px;
   background-color: var(--_colors---white);
   position: relative;
   width: 100%;
@@ -1455,16 +1455,12 @@ img {
 
 .about-cta-wrapper {
   margin-top: 0;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-
-/* ==========================================================================
-   OUR EXPERTISE COMPONENT (Scroll-Driven Pinned Sequence)
-   ========================================================================== */
 
 /* ==========================================================================
    OUR EXPERTISE COMPONENT (Scroll-Driven Pinned Full-Bleed Color Sequence)
@@ -1480,7 +1476,7 @@ img {
 
 .expertise-scroll-track {
   position: relative;
-  height: 280vh;
+  height: 180vh;
   width: 100%;
 }
 
@@ -1793,7 +1789,7 @@ img {
 .case-study-section {
   position: relative;
   width: 100%;
-  padding: 120px 0 140px;
+  padding: 68px 0 76px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light); /* Website exact off-white / cream tone (#f7f7f5) */
   color: var(--_colors---text-primary);
@@ -1818,7 +1814,7 @@ img {
   align-items: center;
   text-align: center;
   max-width: 860px;
-  margin: 0 auto 52px;
+  margin: 0 auto 36px;
   gap: 14px;
 }
 
@@ -1854,7 +1850,7 @@ img {
 
 /* Bottom Action CTA Wrapper */
 .case-studies-bottom-action {
-  margin-top: 56px;
+  margin-top: 36px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -2136,7 +2132,7 @@ img {
 
 @media (max-width: 767px) {
   .case-study-section {
-    padding: 80px 0 100px;
+    padding: 60px 0 70px;
   }
   .case-studies-top-row {
     flex-direction: column;
@@ -2175,7 +2171,7 @@ img {
 .process-section {
   position: relative;
   width: 100%;
-  padding: 130px var(--padding--padding-16) 150px;
+  padding: 68px var(--padding--padding-16) 76px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   color: var(--_colors---text-primary);
@@ -2193,7 +2189,7 @@ img {
 .process-header {
   text-align: center;
   max-width: 680px;
-  margin: 0 auto 64px;
+  margin: 0 auto 36px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2540,7 +2536,7 @@ img {
 .testimonials-section {
   position: relative;
   width: 100%;
-  padding: 120px 0 130px;
+  padding: 68px 0 76px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   color: var(--_colors---text-primary);
@@ -2558,7 +2554,7 @@ img {
 
 /* Header */
 .testimonials-header {
-  margin-bottom: 44px;
+  margin-bottom: 32px;
 }
 
 .testimonials-header-left {
@@ -2800,7 +2796,8 @@ img {
 .testimonial-flag {
   display: inline-flex;
   align-items: center;
-  margin-left: 4px;
+  justify-content: center;
+  line-height: 1;
 }
 
 .testimonial-flag-icon {
@@ -2815,11 +2812,16 @@ img {
 .testimonial-author-role {
   font-family: var(--font-family--primary-font);
   font-size: 13px;
-  color: #555555;
+  color: #55555e;
   line-height: 1.35;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.testimonial-author-role .role-separator {
+  color: #88888e;
+  margin: 0 4px;
 }
 
 /* Bottom Navigation Controls */
@@ -2995,14 +2997,10 @@ img {
    FAQ SECTION (Stodio Style with Rounded Pill Accordion)
    ========================================================================== */
 
-/* ==========================================================================
-   FAQ SECTION (Stodio Style with Rounded Pill Accordion)
-   ========================================================================== */
-
 .faq-section {
   position: relative;
   width: 100%;
-  padding: 130px var(--padding--padding-16) 140px;
+  padding: 68px var(--padding--padding-16) 76px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   color: var(--_colors---text-primary);
@@ -3304,7 +3302,7 @@ img {
 .blog-section {
   position: relative;
   width: 100%;
-  padding: 130px var(--padding--padding-16) 140px;
+  padding: 68px var(--padding--padding-16) 76px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   color: var(--_colors---text-primary);
@@ -3324,7 +3322,7 @@ img {
   justify-content: space-between;
   align-items: flex-end;
   gap: 32px;
-  margin-bottom: 52px;
+  margin-bottom: 36px;
 }
 
 .blog-header-left {
@@ -3775,7 +3773,7 @@ img {
 .pricing-cta-section {
   position: relative;
   width: 100%;
-  padding: 0 var(--padding--padding-16) 100px;
+  padding: 0 var(--padding--padding-16) 64px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   z-index: 10;
@@ -3796,7 +3794,7 @@ img {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 28px;
-  padding: 50px 36px;
+  padding: 42px 32px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -3901,7 +3899,7 @@ img {
 
 @media (max-width: 640px) {
   .pricing-cta-card {
-    padding: 40px 18px;
+    padding: 36px 18px;
     border-radius: 20px;
   }
 
@@ -3918,7 +3916,7 @@ img {
 .get-started-cta-section {
   position: relative;
   width: 100%;
-  padding: 0 var(--padding--padding-16) 100px;
+  padding: 0 var(--padding--padding-16) 64px;
   box-sizing: border-box;
   background-color: var(--_colors---bg-light);
   z-index: 10;
@@ -3939,7 +3937,7 @@ img {
   background-color: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 28px;
-  padding: 52px 36px;
+  padding: 44px 32px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -4032,7 +4030,7 @@ img {
 
 @media (max-width: 640px) {
   .get-started-cta-card {
-    padding: 40px 18px;
+    padding: 36px 18px;
     border-radius: 20px;
   }
 
@@ -4053,7 +4051,7 @@ img {
   background-color: var(--_colors---primary);
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 90px var(--padding--padding-16) 36px;
+  padding: 64px var(--padding--padding-16) 32px;
   box-sizing: border-box;
   color: #ffffff;
   z-index: 10;
