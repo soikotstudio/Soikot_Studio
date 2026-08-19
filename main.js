@@ -441,11 +441,12 @@ function initOurExpertise() {
     let progress = scrolled / scrollDistance;
     progress = Math.max(0, Math.min(1, progress));
 
-    // Transition 1: Panel 2 rises from below during progress 0.10 -> 0.48
-    const t1 = Math.max(0, Math.min(1, (progress - 0.10) / 0.38));
+    // Transition 1: Panel 2 (Violet) rises smoothly between progress 0.15 -> 0.45
+    const t1 = Math.max(0, Math.min(1, (progress - 0.15) / 0.30));
     
-    // Transition 2: Panel 3 rises from below during progress 0.52 -> 0.90
-    const t2 = Math.max(0, Math.min(1, (progress - 0.52) / 0.38));
+    // Generous Resting Window: Panel 2 stays settled in full view from 0.45 -> 0.65
+    // Transition 2: Panel 3 (Orange) rises smoothly between progress 0.65 -> 0.95
+    const t2 = Math.max(0, Math.min(1, (progress - 0.65) / 0.30));
 
     // Continuous physical translation of Panel 2 (from 100% down to 0%)
     const panel2Y = (1 - t1) * 100;
