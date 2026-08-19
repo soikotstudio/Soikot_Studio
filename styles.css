@@ -4602,13 +4602,14 @@ img {
     font-size: 22px;
   }
 
-  /* OurExpertise Tablet */
+  /* OurExpertise Tablet (100% Full-Bleed Solid Colors) */
   .expertise-sticky-viewport {
-    padding: 24px 20px 24px;
+    padding: 0;
   }
   .expertise-panel-card {
-    padding: 20px 24px 24px;
-    border-radius: var(--radius--radius-16);
+    padding: 24px 20px 24px;
+    border-radius: 0;
+    box-shadow: none;
   }
   .expertise-card-headline {
     font-size: 40px;
@@ -4864,13 +4865,14 @@ img {
     height: 56px;
   }
 
-  /* OurExpertise Mobile */
+  /* OurExpertise Mobile (100% Full-Bleed Solid Colors) */
   .expertise-sticky-viewport {
-    padding: 16px 12px 16px;
+    padding: 0;
   }
   .expertise-panel-card {
-    padding: 16px 14px 18px;
-    border-radius: var(--radius--radius-16);
+    padding: 20px 16px 20px;
+    border-radius: 0;
+    box-shadow: none;
   }
   .expertise-card-headline {
     font-size: 26px;
