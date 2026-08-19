@@ -4262,6 +4262,10 @@ img {
   text-transform: uppercase;
   user-select: none;
   white-space: nowrap;
+  display: block;
+  /* Vertical Linear Fade: Top 40% full opacity, fading downward into complete transparency */
+  -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 100%);
 }
 
 /* Bottom Bar */
