@@ -3120,36 +3120,30 @@ img {
 }
 
 .faq-card-cta-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  border-radius: 100px;
+  padding: 10px 18px;
   background: #ffffff;
   color: #0e0e10;
-  padding: 12px 20px;
-  border-radius: 100px;
-  font-family: var(--font-family--primary-font);
-  font-weight: 600;
-  font-size: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  width: auto;
+  max-width: fit-content;
+}
+
+.faq-card-cta-btn .button-text {
+  font-size: 12.5px;
   letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #0e0e10;
+}
+
+.faq-card-cta-btn .button-icon {
+  color: #0e0e10;
+  width: 13px;
+  height: 13px;
 }
 
 .faq-card-cta-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-.faq-btn-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #0e0e10;
-  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
 .faq-card-footer {
