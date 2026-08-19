@@ -2596,13 +2596,14 @@ img {
   display: flex;
   gap: 22px;
   overflow-x: auto;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
+  scroll-behavior: auto; /* Required for fluid RAF continuous sub-pixel drift */
+  scroll-snap-type: none;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   padding: 8px 0 20px 0;
   cursor: grab;
   user-select: none;
+  will-change: scroll-position;
 }
 
 .testimonials-carousel-track::-webkit-scrollbar {
@@ -2611,8 +2612,6 @@ img {
 
 .testimonials-carousel-track.is-dragging {
   cursor: grabbing;
-  scroll-behavior: auto;
-  scroll-snap-type: none;
 }
 
 /* Video Testimonial Card */

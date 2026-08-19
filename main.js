@@ -799,15 +799,19 @@ const testimonialsData = [
 ];
 
 function initVideoTestimonials() {
+  const section = document.getElementById('clientTestimonials');
   const track = document.getElementById('testimonialsGrid');
   const prevBtn = document.getElementById('testimonialPrev');
   const nextBtn = document.getElementById('testimonialNext');
 
   if (!track) return;
 
-  // Render cards from data with authentic SVG flags
-  track.innerHTML = testimonialsData.map((item, idx) => `
-    <div class="testimonial-card" data-idx="${idx}">
+  // Duplicate items to form a seamless infinite loop
+  const loopData = [...testimonialsData, ...testimonialsData];
+
+  // Render cards from duplicated data with authentic SVG flags
+  track.innerHTML = loopData.map((item, idx) => `
+    <div class="testimonial-card" data-idx="${idx % testimonialsData.length}">
       <div class="testimonial-video-frame">
         <img src="${item.thumbnail}" alt="${item.name} Video Testimonial" class="testimonial-poster" loading="lazy" />
         <div class="testimonial-video-overlay"></div>
@@ -832,7 +836,52 @@ function initVideoTestimonials() {
     </div>
   `).join('');
 
-  // Inline Direct-In-Card Video Playback (NO Modal/Popup)
+  // Continuous Slow Moving Carousel Engine
+  let isHovered = false;
+  let isUserInteracting = false;
+  let isVideoPlaying = false;
+  let isSectionInView = true;
+  let resumeTimer = null;
+  let rafId = null;
+  const speed = 0.65; // Relaxed, elegant slow drift pace (pixels per frame)
+
+  function stepAutoScroll() {
+    if (!isHovered && !isUserInteracting && !isVideoPlaying && isSectionInView) {
+      const halfWidth = track.scrollWidth / 2;
+      if (halfWidth > 0) {
+        track.scrollLeft += speed;
+        // Seamless loop without any visual jump
+        if (track.scrollLeft >= halfWidth) {
+          track.scrollLeft -= halfWidth;
+        }
+      }
+    }
+    rafId = requestAnimationFrame(stepAutoScroll);
+  }
+
+  // Start continuous loop
+  rafId = requestAnimationFrame(stepAutoScroll);
+
+  // Viewport Observer (pause when off-screen to preserve CPU/GPU)
+  if (section && 'IntersectionObserver' in window) {
+    const viewObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isSectionInView = entry.isIntersecting;
+      });
+    }, { threshold: 0.1 });
+    viewObserver.observe(section);
+  }
+
+  // Pause on mouse hover over the carousel
+  track.addEventListener('mouseenter', () => {
+    isHovered = true;
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isHovered = false;
+  });
+
+  // Inline Direct-In-Card Video Playback (Pauses auto-scroll while playing)
   let isDragging = false;
   let startX = 0;
   let scrollLeft = 0;
@@ -864,8 +913,10 @@ function initVideoTestimonials() {
       if (existingVid) {
         if (existingVid.paused) {
           existingVid.play().catch(() => {});
+          isVideoPlaying = true;
         } else {
           existingVid.pause();
+          isVideoPlaying = false;
         }
         return;
       }
@@ -875,8 +926,8 @@ function initVideoTestimonials() {
       videoEl.className = 'testimonial-inline-video';
       videoEl.src = item.videoUrl;
       videoEl.autoplay = true;
-      videoEl.controls = true; // Provides sound volume, time duration, scrubber & play/pause right in the card
-      videoEl.muted = false; // Audio enabled for user-initiated click
+      videoEl.controls = true;
+      videoEl.muted = false;
       videoEl.playsInline = true;
       videoEl.setAttribute('playsinline', '');
       videoEl.style.position = 'absolute';
@@ -889,9 +940,9 @@ function initVideoTestimonials() {
 
       frame.appendChild(videoEl);
       card.classList.add('is-playing');
+      isVideoPlaying = true;
 
       videoEl.play().catch(() => {
-        // Fallback for strict browser autoplay policies
         videoEl.muted = true;
         videoEl.play().catch(() => {});
       });
@@ -899,6 +950,13 @@ function initVideoTestimonials() {
       videoEl.addEventListener('ended', () => {
         videoEl.remove();
         card.classList.remove('is-playing');
+        isVideoPlaying = false;
+      });
+
+      videoEl.addEventListener('pause', () => {
+        if (videoEl.ended) {
+          isVideoPlaying = false;
+        }
       });
     }
 
@@ -913,32 +971,56 @@ function initVideoTestimonials() {
   // Prev / Next Navigation Buttons
   const scrollAmount = 292; // Card width (270px) + Gap (22px)
 
+  function handleManualNav(direction) {
+    isUserInteracting = true;
+    clearTimeout(resumeTimer);
+    track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    resumeTimer = setTimeout(() => {
+      isUserInteracting = false;
+    }, 2200);
+  }
+
   if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
+    nextBtn.addEventListener('click', () => handleManualNav(1));
   }
 
   if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
+    prevBtn.addEventListener('click', () => handleManualNav(-1));
   }
 
-  // Mouse Drag / Swipe Support
+  // Touch Swipe Support
+  track.addEventListener('touchstart', () => {
+    isUserInteracting = true;
+    clearTimeout(resumeTimer);
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    resumeTimer = setTimeout(() => {
+      isUserInteracting = false;
+    }, 1800);
+  }, { passive: true });
+
+  // Mouse Drag Support
   let isMouseDown = false;
   let dragThreshold = 5;
 
   track.addEventListener('mousedown', (e) => {
     isMouseDown = true;
+    isUserInteracting = true;
+    clearTimeout(resumeTimer);
     startX = e.pageX - track.offsetLeft;
     scrollLeft = track.scrollLeft;
     track.classList.add('is-dragging');
   });
 
   track.addEventListener('mouseleave', () => {
-    isMouseDown = false;
-    track.classList.remove('is-dragging');
+    if (isMouseDown) {
+      isMouseDown = false;
+      track.classList.remove('is-dragging');
+      resumeTimer = setTimeout(() => {
+        isUserInteracting = false;
+      }, 1500);
+    }
   });
 
   track.addEventListener('mouseup', () => {
@@ -947,6 +1029,9 @@ function initVideoTestimonials() {
     setTimeout(() => {
       isDragging = false;
     }, 50);
+    resumeTimer = setTimeout(() => {
+      isUserInteracting = false;
+    }, 1800);
   });
 
   track.addEventListener('mousemove', (e) => {
@@ -957,6 +1042,18 @@ function initVideoTestimonials() {
       isDragging = true;
     }
     track.scrollLeft = scrollLeft - walk;
+
+    // Boundary wrap for manual drag
+    const halfWidth = track.scrollWidth / 2;
+    if (track.scrollLeft >= halfWidth) {
+      track.scrollLeft -= halfWidth;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    } else if (track.scrollLeft <= 0) {
+      track.scrollLeft += halfWidth;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    }
   });
 }
 
