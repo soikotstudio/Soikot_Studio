@@ -4748,13 +4748,28 @@ img {
   .button-wrapper.hero {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
 
   .button.primary-cta,
   .button.secondary-cta {
-    padding: 12px 20px;
-    font-size: 14px;
+    padding: 10px 18px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    border-radius: 100px;
+  }
+
+  .button-content-block {
+    height: 18px;
+  }
+
+  .button-text {
+    font-size: 13px;
+  }
+
+  .button-icon {
+    width: 13px;
+    height: 13px;
   }
 
   /* Marquee Mobile */
@@ -5149,21 +5164,36 @@ img {
   }
 
   .button-wrapper.hero {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
-    gap: 12px;
+    gap: 8px;
   }
 
   .button.primary-cta,
   .button.secondary-cta {
-    width: 100%;
+    flex: 1 1 calc(50% - 5px);
+    min-width: 130px;
+    width: auto;
     justify-content: center;
-    padding: 14px 20px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    border-radius: 100px;
   }
 
   .button-content-block {
-    width: 100%;
+    width: auto;
     justify-content: center;
+    height: 17px;
+  }
+
+  .button-text {
+    font-size: 12.5px;
+  }
+
+  .button-icon {
+    width: 12px;
+    height: 12px;
   }
 
   /* VideoShowcase Small Mobile */
