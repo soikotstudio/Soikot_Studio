@@ -2552,37 +2552,37 @@ img {
   box-sizing: border-box;
 }
 
-/* Header */
+/* Header (Centered matching Our Process & Selected Work) */
 .testimonials-header {
-  margin-bottom: 32px;
-}
-
-.testimonials-header-left {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 36px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
-  max-width: 720px;
 }
 
 .testimonials-heading {
   font-family: var(--font-family--primary-font);
-  font-size: clamp(34px, 4.2vw, 50px);
-  line-height: 1.1em;
+  font-size: clamp(32px, 3.8vw, 48px);
+  line-height: 1.12em;
   font-weight: 600;
   letter-spacing: -0.035em;
   color: var(--_colors---text-primary);
   margin: 0;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .testimonials-subheading {
   font-family: var(--font-family--primary-font);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6em;
   color: var(--_colors---text-secondary);
-  margin: 0;
+  margin: 0 auto;
   max-width: 520px;
+  text-align: center;
 }
 
 /* Carousel Container & Peek Track */
@@ -3316,32 +3316,27 @@ img {
   margin: 0 auto;
 }
 
-/* Header */
+/* Header (Centered matching Our Process & Selected Work) */
 .blog-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-bottom: 36px;
-}
-
-.blog-header-left {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 36px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 16px;
-  max-width: 720px;
 }
 
 .blog-heading {
   font-family: var(--font-family--primary-font);
-  font-size: clamp(36px, 4.2vw, 52px);
-  line-height: 1.1em;
+  font-size: clamp(32px, 3.8vw, 48px);
+  line-height: 1.12em;
   font-weight: 600;
   letter-spacing: -0.035em;
   color: var(--_colors---text-primary);
   margin: 0;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .blog-serif-text {
@@ -3354,38 +3349,25 @@ img {
 
 .blog-subheading {
   font-family: var(--font-family--primary-font);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6em;
   color: var(--_colors---text-secondary);
-  margin: 0;
+  margin: 0 auto;
+  max-width: 540px;
+  text-align: center;
 }
 
-/* View All Articles Header Button */
-.blog-all-btn {
-  background-color: var(--_colors---brand-color);
-  color: #ffffff;
-  border-radius: 999px;
-  padding: 12px 24px;
-  border: 1px solid var(--_colors---brand-color);
-  display: inline-flex;
+/* Bottom Action CTA Wrapper (Matching Case Studies / Our Process) */
+.blog-bottom-action {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  font-family: var(--font-family--primary-font);
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  box-shadow: 0 4px 14px rgba(222, 50, 45, 0.25);
-  transition: all 0.3s ease;
+  width: 100%;
 }
 
-.blog-all-btn:hover {
-  background-color: #c92520;
-  border-color: #c92520;
-  color: #ffffff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(222, 50, 45, 0.35);
+.blog-bottom-btn {
+  text-decoration: none;
 }
 
 /* Dedicated Blog Page Hero */
