@@ -4074,39 +4074,49 @@ img {
   gap: 56px;
 }
 
-/* Top Multi-Column Layout */
+/* Top Multi-Column Layout (Top and Bottom Baseline Aligned) */
 .footer-top-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1.85fr;
-  gap: 64px;
-  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 48px;
 }
 
-/* Left Side: Newsletter (Matches Reference Pill Style) */
+/* Left Side: Newsletter (Stretches from top headline to bottom email input) */
 .footer-newsletter-col {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 28px;
-  max-width: 480px;
+  flex: 0 1 480px;
+  max-width: 500px;
 }
 
 .footer-newsletter-title {
   font-family: var(--font-family--primary-font);
-  font-size: clamp(34px, 3.4vw, 48px);
+  font-size: clamp(32px, 3.1vw, 44px);
   line-height: 1.15em;
   font-weight: 500;
   letter-spacing: -0.03em;
   color: #ffffff;
   margin: 0;
   text-transform: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title-line {
+  display: block;
+  white-space: nowrap;
 }
 
 .footer-newsletter-form {
   width: 100%;
+  max-width: 440px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  margin-top: auto;
+  padding-top: 28px;
 }
 
 .footer-input-wrap {
@@ -4121,10 +4131,10 @@ img {
   background: transparent;
   border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 100px;
-  padding: 16px 58px 16px 26px;
+  padding: 15px 56px 15px 24px;
   color: #ffffff;
   font-family: var(--font-family--primary-font);
-  font-size: 15px;
+  font-size: 14.5px;
   outline: none;
   box-sizing: border-box;
   transition: border-color 0.3s ease, background-color 0.3s ease;
@@ -4141,9 +4151,9 @@ img {
 
 .footer-submit-btn {
   position: absolute;
-  right: 6px;
-  width: 42px;
-  height: 42px;
+  right: 5px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: #ffffff;
   color: #000000;
@@ -4168,16 +4178,16 @@ img {
 
 /* Center / Right: Navigation Columns with Vertical Divider Lines (Exact Reference Style) */
 .footer-nav-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: stretch;
   gap: 0;
-  position: relative;
+  flex: 0 0 auto;
 }
 
 .footer-nav-col {
   display: flex;
   flex-direction: column;
-  padding: 0 32px;
+  padding: 0 38px;
 }
 
 .footer-nav-col:first-child {
@@ -4194,7 +4204,9 @@ img {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  justify-content: space-between;
+  height: 100%;
+  gap: 16px;
 }
 
 .footer-nav-link {
@@ -4204,6 +4216,7 @@ img {
   color: #ffffff;
   opacity: 0.92;
   text-decoration: none;
+  line-height: 1.25;
   transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
   display: inline-block;
 }
