@@ -2428,87 +2428,73 @@ html.lenis, html.lenis body {
 /* --- RESPONSIVE MOBILE / TABLET (≤ 991px) --- */
 @media screen and (max-width: 991px) {
   .split-case-studies-container {
-    flex-direction: column;
+    flex-direction: column !important;
   }
 
   .split-cs-sidebar {
-    position: relative;
-    top: auto;
-    width: 100%;
-    min-width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--_colors---border-dark, rgba(255, 255, 255, 0.08));
+    position: relative !important;
+    top: auto !important;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--_colors---border-dark, rgba(255, 255, 255, 0.08)) !important;
   }
 
   .split-cs-vertical-rail {
-    display: none;
+    display: none !important;
   }
 
   .split-cs-sidebar-main {
-    padding: 44px 24px 36px;
-    gap: 24px;
+    padding: 40px 20px 32px !important;
+    gap: 20px !important;
   }
 
   .split-cs-hero-heading {
-    font-size: 26px;
+    font-size: clamp(22px, 5vw, 28px) !important;
   }
 
   .split-cs-projects-stack {
-    width: 100%;
+    width: 100% !important;
+    flex: none !important;
   }
 
   .split-cs-scene-card {
-    min-height: 60vh;
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 380px !important;
+    max-height: 540px !important;
+    aspect-ratio: 16 / 10 !important;
   }
 
   .split-cs-scene-media-wrap {
-    height: 65vh;
-    cursor: pointer;
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 380px !important;
+    aspect-ratio: 16 / 10 !important;
+    cursor: pointer !important;
   }
 
-  .split-cs-cursor-pill {
+  .split-cs-scene-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+  }
+
+  .cs-custom-cursor-follower {
     display: none !important;
   }
 
   .split-cs-scene-glass-chip {
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 14px;
-  }
-}
-
-  .split-cs-sidebar-main {
-    padding: 44px 24px 36px;
-    gap: 24px;
-  }
-
-  .split-cs-hero-heading {
-    font-size: 26px;
-  }
-
-  .split-cs-projects-stack {
-    width: 100%;
-  }
-
-  .split-cs-scene-card {
-    min-height: 60vh;
-  }
-
-  .split-cs-scene-media-wrap {
-    height: 65vh;
-    cursor: pointer;
-  }
-
-  .split-cs-cursor-pill {
-    display: none !important;
-  }
-
-  .split-cs-scene-glass-chip {
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 14px;
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 6px 12px !important;
   }
 }
 
