@@ -486,62 +486,9 @@ function initVideoShowcase() {
 
   if (!showcaseSection || !videoFrame) return;
 
-  // 1. High-Performance Fluid Scroll Engine (Pinned Scale-Up as user scrolls)
-  let currentProgress = 0;
-  let targetProgress = 0;
-  let rafId = null;
-
-  function calculateProgress() {
-    const track = showcaseSection.querySelector('.video-showcase-track') || showcaseSection;
-    const rect = track.getBoundingClientRect();
-    const scrollDistance = track.offsetHeight - window.innerHeight;
-
-    if (scrollDistance <= 0) return 0;
-
-    const scrolled = -rect.top;
-    return Math.max(0, Math.min(1, scrolled / scrollDistance));
-  }
-
-  function updateMotion() {
-    currentProgress += (targetProgress - currentProgress) * 0.16;
-
-    const isMobile = window.innerWidth <= 767;
-
-    // Scale curve: begins compact (0.78), expands smoothly to full presentation width (1.0)
-    const startScale = isMobile ? 0.88 : 0.78;
-    const targetScale = startScale + currentProgress * (1.0 - startScale);
-
-    // Border-radius morphing (34px down to 20px on full expansion)
-    const startRadius = isMobile ? 18 : 34;
-    const endRadius = isMobile ? 12 : 20;
-    const targetRadius = startRadius - currentProgress * (startRadius - endRadius);
-
-    videoFrame.style.transform = `translate3d(0, 0, 0) scale(${targetScale.toFixed(4)})`;
-    videoFrame.style.borderRadius = `${targetRadius.toFixed(1)}px`;
-
-    if (Math.abs(targetProgress - currentProgress) > 0.0004) {
-      rafId = window.requestAnimationFrame(updateMotion);
-    } else {
-      rafId = null;
-    }
-  }
-
-  function onScroll() {
-    targetProgress = calculateProgress();
-    if (!rafId) {
-      rafId = window.requestAnimationFrame(updateMotion);
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  if (window.lenisInstance) {
-    window.lenisInstance.on('scroll', onScroll);
-  }
-
-  targetProgress = calculateProgress();
-  currentProgress = targetProgress;
-  updateMotion();
+  // 1. Natural Static Layout (No scroll scaling transforms)
+  videoFrame.style.transform = '';
+  videoFrame.style.borderRadius = '';
 
   // 2. Explicit User-Driven Video Playback & Controls (NO auto-play on scroll)
   if (video) {

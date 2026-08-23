@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css?v=9.0" />
+  <link rel="stylesheet" href="styles.css?v=9.1" />
 </head>
 <body>
   <div class="page-wrapper">
@@ -367,125 +367,123 @@
       </div>
     </section>
 
-    <!-- Unified About Us & Video Showcase Section (Pinned Scroll-Driven Expansion) -->
+    <!-- Unified About Us & Video Showcase Section (Natural Flow) -->
     <section class="video-showcase-section" id="aboutUs" data-component="VideoShowcase">
-      <div class="video-showcase-track">
-        <div class="video-showcase-sticky">
-          
-          <!-- Section Header (About Us) -->
-          <div class="video-showcase-header-block reveal-item" id="videoShowcaseHeader">
-            <div class="tag-block" style="justify-content: center; margin-bottom: 14px;">
-              <div class="tag-wrapper about-us-tag">
-                <span class="tag-plus-box">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                </span>
-                <span class="tag-text">ABOUT US</span>
-              </div>
+      <div class="video-showcase-container">
+        
+        <!-- Section Header (About Us) -->
+        <div class="video-showcase-header-block reveal-item" id="videoShowcaseHeader">
+          <div class="tag-block" style="justify-content: center; margin-bottom: 16px;">
+            <div class="tag-wrapper about-us-tag">
+              <span class="tag-plus-box">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+              <span class="tag-text">ABOUT US</span>
             </div>
-            <h2 class="about-us-headline scroll-fill-text" data-component="ScrollFillText" data-scroll-fill-start="top 85%" data-scroll-fill-end="bottom 50%">
-              <span class="heading-line-primary">CRAFTING DIGITAL EXPERIENCES</span>
-              <span class="heading-line-faded">THAT ACCELERATE GROWTH</span>
-            </h2>
-            <p class="about-us-subtext">
-              We partner with ambitious brands to build category-defining digital experiences that accelerate growth.
-            </p>
           </div>
+          <h2 class="about-us-headline scroll-fill-text" data-component="ScrollFillText" data-scroll-fill-start="top 85%" data-scroll-fill-end="bottom 50%">
+            <span class="heading-line-primary">CRAFTING DIGITAL EXPERIENCES</span>
+            <span class="heading-line-faded">THAT ACCELERATE GROWTH</span>
+          </h2>
+          <p class="about-us-subtext">
+            We partner with ambitious brands to build category-defining digital experiences that accelerate growth.
+          </p>
+        </div>
 
-          <!-- Pinned Scaling Video Frame -->
-          <div class="video-frame-container">
-            <div class="video-frame" id="videoFrame">
-              <video 
-                class="showcase-video" 
-                id="showcaseVideo"
-                poster="assets/hero_bg.jpg"
-                muted 
-                loop 
-                playsinline 
-                preload="metadata">
-                <source src="assets/videos/showcase.mp4" type="video/mp4">
-              </video>
+        <!-- Full Standard Video Frame -->
+        <div class="video-frame-container">
+          <div class="video-frame" id="videoFrame">
+            <video 
+              class="showcase-video" 
+              id="showcaseVideo"
+              poster="assets/hero_bg.jpg"
+              muted 
+              loop 
+              playsinline 
+              preload="metadata">
+              <source src="assets/videos/showcase.mp4" type="video/mp4">
+            </video>
 
-              <!-- Center Interactive Play/Pause Indicator -->
-              <button class="video-playback-toggle" id="videoPlayToggle" aria-label="Toggle Video Playback">
-                <svg class="play-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <!-- Center Interactive Play/Pause Indicator -->
+            <button class="video-playback-toggle" id="videoPlayToggle" aria-label="Toggle Video Playback">
+              <svg class="play-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="6,4 20,12 6,20"/>
+              </svg>
+              <svg class="pause-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <rect x="6" y="4" width="4" height="16"/>
+                <rect x="14" y="4" width="4" height="16"/>
+              </svg>
+            </button>
+
+            <!-- Floating Bottom Video Player Control Bar -->
+            <div class="showcase-video-controls" id="showcaseControls">
+              <button type="button" class="video-ctrl-btn" id="showcasePlayBtn" aria-label="Play or Pause Video">
+                <svg class="ctrl-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="6,4 20,12 6,20"/>
                 </svg>
-                <svg class="pause-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <svg class="ctrl-pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
                   <rect x="6" y="4" width="4" height="16"/>
                   <rect x="14" y="4" width="4" height="16"/>
                 </svg>
               </button>
 
-              <!-- Floating Bottom Video Player Control Bar -->
-              <div class="showcase-video-controls" id="showcaseControls">
-                <button type="button" class="video-ctrl-btn" id="showcasePlayBtn" aria-label="Play or Pause Video">
-                  <svg class="ctrl-play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                    <polygon points="6,4 20,12 6,20"/>
-                  </svg>
-                  <svg class="ctrl-pause-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
-                    <rect x="6" y="4" width="4" height="16"/>
-                    <rect x="14" y="4" width="4" height="16"/>
-                  </svg>
-                </button>
-
-                <div class="video-scrubber-track" id="showcaseScrubber" role="slider" aria-label="Seek video">
-                  <div class="video-scrubber-fill" id="showcaseProgressFill" style="width: 0%;"></div>
-                  <div class="video-scrubber-handle" id="showcaseProgressHandle"></div>
-                </div>
-
-                <div class="video-time-readout" id="showcaseTimeDisplay">
-                  <span class="video-current-time">0:00</span> / <span class="video-total-duration">0:00</span>
-                </div>
-
-                <button type="button" class="video-ctrl-btn" id="showcaseMuteBtn" aria-label="Toggle Sound">
-                  <svg class="ctrl-unmuted-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-                  </svg>
-                  <svg class="ctrl-muted-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <line x1="23" y1="9" x2="17" y2="15"></line>
-                    <line x1="17" y1="9" x2="23" y2="15"></line>
-                  </svg>
-                </button>
-
-                <button type="button" class="video-ctrl-btn" id="showcaseFullscreenBtn" aria-label="Toggle Fullscreen">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
-                  </svg>
-                </button>
+              <div class="video-scrubber-track" id="showcaseScrubber" role="slider" aria-label="Seek video">
+                <div class="video-scrubber-fill" id="showcaseProgressFill" style="width: 0%;"></div>
+                <div class="video-scrubber-handle" id="showcaseProgressHandle"></div>
               </div>
 
+              <div class="video-time-readout" id="showcaseTimeDisplay">
+                <span class="video-current-time">0:00</span> / <span class="video-total-duration">0:00</span>
+              </div>
+
+              <button type="button" class="video-ctrl-btn" id="showcaseMuteBtn" aria-label="Toggle Sound">
+                <svg class="ctrl-unmuted-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+                <svg class="ctrl-muted-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <line x1="23" y1="9" x2="17" y2="15"></line>
+                  <line x1="17" y1="9" x2="23" y2="15"></line>
+                </svg>
+              </button>
+
+              <button type="button" class="video-ctrl-btn" id="showcaseFullscreenBtn" aria-label="Toggle Fullscreen">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path>
+                </svg>
+              </button>
             </div>
-          </div>
 
-          <!-- More About Us CTA Button -->
-          <div class="video-showcase-cta-wrap reveal-item delay-1">
-            <a href="#ourExpertise" class="button w-variant-brand primary-cta">
-              <div class="button-content-block">
-                <div class="button-inner">
-                  <span class="button-text">MORE ABOUT US</span>
-                  <div class="button-icon-wrapper">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
-                </div>
-                <div class="button-inner absolute">
-                  <span class="button-text">MORE ABOUT US</span>
-                  <div class="button-icon-wrapper">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                      <line x1="7" y1="17" x2="17" y2="7"></line>
-                      <polyline points="7 7 17 7 17 17"></polyline>
-                    </svg>
-                  </div>
+          </div>
+        </div>
+
+        <!-- More About Us CTA Button (Positioned Cleanly Right After the Video) -->
+        <div class="video-showcase-cta-wrap reveal-item delay-1">
+          <a href="#ourExpertise" class="button w-variant-brand primary-cta">
+            <div class="button-content-block">
+              <div class="button-inner">
+                <span class="button-text">MORE ABOUT US</span>
+                <div class="button-icon-wrapper">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
                 </div>
               </div>
-            </a>
-          </div>
-
+              <div class="button-inner absolute">
+                <span class="button-text">MORE ABOUT US</span>
+                <div class="button-icon-wrapper">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="7 7 17 7 17 17"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
+
       </div>
     </section>
                       <polyline points="7 7 17 7 17 17"></polyline>
@@ -1513,6 +1511,6 @@
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="main.js?v=9.0"></script>
+  <script src="main.js?v=9.1"></script>
 </body>
 </html>

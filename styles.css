@@ -1068,50 +1068,36 @@ a.button:hover,
 }
 
 /* ==========================================================================
-   VIDEO SHOWCASE COMPONENT (Pinned Scroll-Driven Cinematic Expansion)
+   VIDEO SHOWCASE COMPONENT (Natural Flow Layout - Original Video Size)
    ========================================================================== */
 
 .video-showcase-section {
   position: relative;
   background-color: #ffffff;
   width: 100%;
+  padding: 84px var(--padding--padding-16) 72px;
   color: var(--_colors---text-primary);
   z-index: 10;
+  box-sizing: border-box;
 }
 
-.video-showcase-track {
-  position: relative;
-  height: 180vh;
+.video-showcase-container {
   width: 100%;
-  background-color: #ffffff;
-}
-
-.video-showcase-sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  height: 100dvh;
-  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  background-color: #ffffff;
-  box-sizing: border-box;
-  padding: 28px 24px 24px;
 }
 
 .video-showcase-header-block {
   width: 100%;
   max-width: 860px;
-  margin: 0 auto;
+  margin: 0 auto 36px;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-shrink: 0;
-  z-index: 20;
 }
 
 .video-ambient-bg {
@@ -1133,10 +1119,9 @@ a.button:hover,
   position: relative;
   width: min(90vw, 1400px);
   aspect-ratio: 16 / 10;
-  max-height: calc(100vh - 105px);
   border-radius: 22px;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.06);
   transform-origin: center center;
   will-change: transform, border-radius;
@@ -1148,8 +1133,8 @@ a.button:hover,
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 20;
-  flex-shrink: 0;
+  z-index: 15;
+  margin-top: 36px;
 }
 
 .showcase-video {
