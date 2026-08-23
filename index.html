@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SOIKOT STUDIO — Independent Creative Studio</title>
+  <title>SOIKOT STUDIO | Independent Creative Studio</title>
   <meta name="description" content="Soikot Studio creates distinctive brands, websites, and digital experiences for businesses that don't want to look like everyone else." />
   
-  <!-- Preconnect and Google Fonts (Geist, Geist Mono, Inter, Playfair Display) -->
+  <!-- Preconnect and Google Fonts (Plus Jakarta Sans, IBM Plex Mono, Playfair Display) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&family=Geist:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=9.0" />
 </head>
 <body>
   <div class="page-wrapper">
@@ -214,7 +214,7 @@
       <!-- Hero Section -->
       <section class="hero-section" id="home">
         <!-- Editorial Background Image & Ambient Darkness Layer -->
-        <img src="assets/hero_bg.jpg" alt="Editorial Fashion Background" class="hero-bg" />
+        <img src="assets/hero_bg.jpg" alt="Editorial Fashion Background" class="hero-bg" id="heroBgImg" />
         <div class="hero-overlay"></div>
 
         <div class="hero-main-wrapper">
@@ -234,13 +234,13 @@
               <!-- Main Title Block -->
               <div class="hero-title-block home hero-load-title">
                 <div class="title-single-block">
-                  <h1 class="heading-style-01">
+                  <h1 class="heading-style-01" id="heroHeadline">
                     DESIGN THAT MAKES<br />
                     YOUR BRAND<br />
                     IMPOSSIBLE TO IGNORE.
                   </h1>
                 </div>
-                <p class="hero-subtext hero-load-subtext">
+                <p class="hero-subtext hero-load-subtext" id="heroSubtext">
                   Soikot Studio creates distinctive brands, websites, and digital experiences for businesses that don't want to look like everyone else.
                 </p>
               </div>
@@ -323,7 +323,7 @@
         
         <!-- Left Intro Info with Rotating Star Icon -->
         <div class="marquee-intro">
-          <div class="marquee-icon">
+          <div class="marquee-icon" id="starburstGraphic">
             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M22.7428 13.2871C22.2703 9.23848 21.7715 4.96373 21.7715 0H26.2285C26.2285 4.90798 25.7321 9.17729 25.2602 13.2305C24.8759 16.5336 24.5082 19.6932 24.4399 22.938C26.6779 20.6036 28.6356 18.1284 30.6864 15.5356C33.2149 12.3388 35.8852 8.96334 39.3948 5.45357L42.5465 8.60525C39.076 12.0757 35.7056 14.7433 32.5061 17.2759L32.5031 17.2782C29.8969 19.3414 27.4038 21.3149 25.062 23.5601C28.2948 23.4918 31.4293 23.126 34.7126 22.7429C38.7613 22.2703 43.0363 21.7715 48 21.7715V26.2285C43.0922 26.2285 38.8229 25.7318 34.7699 25.2602L34.7669 25.26C31.4645 24.8758 28.3058 24.5083 25.062 24.4399C27.3948 26.6762 29.8687 28.6331 32.4599 30.6824L32.464 30.6859C35.6609 33.2147 39.0365 35.8847 42.5465 39.3948L39.3948 42.5465C35.9243 39.0761 33.2568 35.706 30.7246 32.5067L30.7186 32.4984L30.7135 32.4918C28.653 29.8897 26.6819 27.4006 24.4399 25.062C24.5082 28.3068 24.8759 31.4664 25.2602 34.7695C25.7321 38.8228 26.2285 43.092 26.2285 48H21.7715C21.7715 43.0363 22.2703 38.7616 22.7428 34.7129L22.7437 34.7063C23.1264 31.4252 23.4918 28.2926 23.5601 25.062C21.3181 27.4006 19.347 29.8897 17.2865 32.4918L17.2814 32.4984L17.2754 32.5067C14.7432 35.706 12.0757 39.0761 8.60525 42.5465L5.45357 39.3948C8.96351 35.8847 12.3391 33.2147 15.536 30.6859L15.5401 30.6824C18.1313 28.6331 20.6052 26.6762 22.938 24.4399C19.6932 24.5084 16.5335 24.876 13.2301 25.2602C9.17712 25.7318 4.90781 26.2285 0 26.2285V21.7715C4.96373 21.7715 9.23873 22.2703 13.2874 22.7429C16.5707 23.126 19.7052 23.4918 22.938 23.5601C20.5952 21.314 18.1012 19.3399 15.4939 17.2759C12.2944 14.7433 8.92399 12.0757 5.45357 8.60525L8.60525 5.45357C12.1148 8.96334 14.7851 12.3388 17.3136 15.5356C19.3644 18.1283 21.3221 20.6035 23.5601 22.9378C23.4918 19.7072 23.1264 16.5748 22.7437 13.2937L22.7428 13.2871Z" fill="#232323"/>
             </svg>
@@ -367,26 +367,31 @@
       </div>
     </section>
 
-    <!-- Video Showcase Section (Scroll-Driven Cinematic Expansion) -->
-    <section class="video-showcase-section" id="videoShowcase" data-component="VideoShowcase">
+    <!-- Unified About Us & Video Showcase Section (Pinned Scroll-Driven Expansion) -->
+    <section class="video-showcase-section" id="aboutUs" data-component="VideoShowcase">
       <div class="video-showcase-track">
         <div class="video-showcase-sticky">
           
-          <!-- Background Ambient Glow & Darkness -->
-          <div class="video-ambient-bg"></div>
-
-          <!-- Section Floating Header Overlay (Fades out as video scales up) -->
-          <div class="video-showcase-header" id="videoShowcaseHeader">
-            <div class="tag-wrapper">
-              <span class="tag-plus-box">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-              </span>
-              <span class="tag-text">ABOUT SOIKOT STUDIO</span>
+          <!-- Section Header (About Us) -->
+          <div class="video-showcase-header-block reveal-item" id="videoShowcaseHeader">
+            <div class="tag-block" style="justify-content: center; margin-bottom: 14px;">
+              <div class="tag-wrapper about-us-tag">
+                <span class="tag-plus-box">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </span>
+                <span class="tag-text">ABOUT US</span>
+              </div>
             </div>
-            <h2 class="video-showcase-title">EXPERIENCES CRAFTED<br />FOR THE FUTURE</h2>
+            <h2 class="about-us-headline scroll-fill-text" data-component="ScrollFillText" data-scroll-fill-start="top 85%" data-scroll-fill-end="bottom 50%">
+              <span class="heading-line-primary">CRAFTING DIGITAL EXPERIENCES</span>
+              <span class="heading-line-faded">THAT ACCELERATE GROWTH</span>
+            </h2>
+            <p class="about-us-subtext">
+              We partner with ambitious brands to build category-defining digital experiences that accelerate growth.
+            </p>
           </div>
 
-          <!-- Scroll-Driven Scaling Video Frame -->
+          <!-- Pinned Scaling Video Frame -->
           <div class="video-frame-container">
             <div class="video-frame" id="videoFrame">
               <video 
@@ -399,27 +404,13 @@
                 preload="metadata">
                 <source src="assets/videos/showcase.mp4" type="video/mp4">
               </video>
-              
-              <!-- Video Inner Ambient Overlay -->
-              <div class="video-inner-overlay"></div>
-              
-              <!-- Video Corner Badges & Metadata -->
-              <div class="video-meta-bar">
-                <div class="video-meta-left">
-                  <span class="video-indicator-dot"></span>
-                  <span class="video-meta-text">SOIKOT REEL // 2024</span>
-                </div>
-                <div class="video-meta-right">
-                  <span class="video-meta-text">4K DIGITAL EXPERIENCE</span>
-                </div>
-              </div>
 
               <!-- Center Interactive Play/Pause Indicator -->
               <button class="video-playback-toggle" id="videoPlayToggle" aria-label="Toggle Video Playback">
-                <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <svg class="play-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                   <polygon points="6,4 20,12 6,20"/>
                 </svg>
-                <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+                <svg class="pause-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
                   <rect x="6" y="4" width="4" height="16"/>
                   <rect x="14" y="4" width="4" height="16"/>
                 </svg>
@@ -468,17 +459,8 @@
             </div>
           </div>
 
-        </div>
-      </div>
-    </section>
-
-        <!-- By The Numbers Statistic Section (Matching Reference Exactly) -->
-    <section class="counter-section" id="byTheNumbers" data-component="ByTheNumbers">
-      <div class="container">
-        <div class="conter-block">
-          
-          <!-- More About Us CTA Button (Positioned Before By The Numbers) -->
-          <div class="about-cta-wrapper reveal-item delay-1">
+          <!-- More About Us CTA Button -->
+          <div class="video-showcase-cta-wrap reveal-item delay-1">
             <a href="#ourExpertise" class="button w-variant-brand primary-cta">
               <div class="button-content-block">
                 <div class="button-inner">
@@ -503,12 +485,34 @@
             </a>
           </div>
 
-          <!-- Tag Pill -->
-          <div class="tag-wrapper">
-            <span class="tag-plus-box">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </span>
-            <span class="tag-text">BY THE NUMBERS</span>
+        </div>
+      </div>
+    </section>
+                      <polyline points="7 7 17 7 17 17"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- By The Numbers Statistic Section (Matching Reference Exactly) -->
+    <section class="counter-section" id="byTheNumbers" data-component="ByTheNumbers">
+      <div class="container">
+        <div class="conter-block">
+
+          <!-- Tag Pill (Centered) -->
+          <div class="tag-block" style="display: flex; justify-content: center; width: 100%; margin-bottom: 24px;">
+            <div class="tag-wrapper">
+              <span class="tag-plus-box">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+              </span>
+              <span class="tag-text">BY THE NUMBERS</span>
+            </div>
           </div>
 
           <!-- 4-Column Statistics Grid -->
@@ -771,214 +775,177 @@
       </div>
     </section>
 
-    <!-- Case Studies Section (Scale & Translate 3D Layered Carousel) -->
-    <section class="case-study-section" id="caseStudies" data-component="CaseStudies">
-      <div class="case-studies-container">
+    <!-- ==========================================================================
+         SPLIT SCROLL CASE STUDIES SECTION (Matching Dark High-End Aesthetic Exactly)
+         ========================================================================== -->
+    <section class="split-case-studies-section" id="caseStudies" data-component="SplitScrollCaseStudies">
+      <div class="split-case-studies-container">
         
-        <!-- Top Editorial Header Row with Tag, Title and Lead Text -->
-        <div class="case-studies-header-block reveal-item">
-          <div class="tag-wrapper">
-            <span class="tag-plus-box">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-            </span>
-            <span class="tag-text">SELECTED WORK</span>
-          </div>
-          
-          <h2 class="case-studies-heading">
-            <span class="heading-line-primary">PROVEN RESULTS THROUGH</span>
-            <span class="heading-line-faded">STRATEGIC ART &amp; PERFORMANCE</span>
-          </h2>
-          
-          <p class="case-studies-lead-text">
-            I don't just run campaigns—I transform them. See how I helped businesses achieve breakthroughs with strategic performance marketing.
-          </p>
-        </div>
-
-        <!-- Overlapping Scale Carousel Container -->
-        <div class="carousel-container reveal-item delay-1">
-          <div class="carousel-track" id="caseStudyTrack">
+        <!-- LEFT PINNED / STICKY SIDEBAR (Clean & Minimal Editorial Layout) -->
+        <aside class="split-cs-sidebar" id="csSidebar">
+          <div class="split-cs-sidebar-main">
             
-            <!-- Card 1: City Bank -->
-            <div class="card" data-index="0">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/city_bank.jpg" alt="City Bank Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">City Bank was created to simplify how retail and business clients manage digital banking, instant transfers, and wealth.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">City Bank</h3>
-                  <p class="case-card-category">Mobile Apps &amp; Digital Banking</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View City Bank Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
+            <!-- Main Editorial Heading -->
+            <div class="split-cs-hero-heading-block">
+              <h2 class="split-cs-hero-heading">
+                Immersive design<br/>
+                + development for<br/>
+                future-proof<br/>
+                brands.
+              </h2>
             </div>
 
-            <!-- Card 2: Aarong -->
-            <div class="card" data-index="1">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/aarong.jpg" alt="Aarong Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Aarong was created to elevate traditional artisan heritage fashion onto a seamless global digital retail flagship.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Aarong</h3>
-                  <p class="case-card-category">Luxury Fashion &amp; Artisan Heritage</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Aarong Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
+            <!-- Primary CTA Button (MeetingPreviewButton: Pill Button with Morphing Dot -> Dual Avatars) -->
+            <div class="split-cs-cta-block">
+              <a href="#contact" class="button w-variant-brand meeting-preview-btn" id="csMeetingBtn" data-component="MeetingPreviewButton" aria-label="Book a 30-min call">
+                <span class="meeting-btn-icon-area" aria-hidden="true">
+                  <!-- Idle Dot Indicator -->
+                  <span class="meeting-btn-dot-wrap">
+                    <span class="meeting-btn-dot-outer"></span>
+                    <span class="meeting-btn-dot-inner"></span>
+                  </span>
+                  <!-- Hover Avatars Deck -->
+                  <span class="meeting-btn-avatars-wrap">
+                    <span class="meeting-btn-user-avatar">You</span>
+                    <span class="meeting-btn-connector">+</span>
+                    <span class="meeting-btn-person-avatar">
+                      <img src="assets/avatar.jpg" alt="Soikot" class="meeting-btn-person-img" />
+                    </span>
+                  </span>
+                </span>
+                <span class="meeting-btn-label">Book a 30-min call</span>
+              </a>
             </div>
 
-            <!-- Card 3: Clear Day Kayaks (Initial Active Main) -->
-            <div class="card" data-index="2">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/clear_day_kayaks.jpg" alt="Clear Day Kayaks Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Clear Day Kayaks was created to immerse travelers in an interactive 3D excursion booking platform with real-time tours.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Clear Day Kayaks</h3>
-                  <p class="case-card-category">Ecotourism Experience &amp; 3D Booking</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Clear Day Kayaks Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
+            <!-- Slots Left Indicator (3/10 Slots Left this month) -->
+            <div class="split-cs-slots-indicator" aria-label="3 of 10 slots available this month">
+              <span class="slots-icon-disc" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="3" fill="currentColor"></circle>
+                </svg>
+              </span>
+              <span class="slots-count">3/10</span>
+              <span class="slots-label">Slots Left this month</span>
             </div>
 
-            <!-- Card 4: Wenny Mart -->
-            <div class="card" data-index="3">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/wenny_mart.jpg" alt="Wenny Mart Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Wenny Mart was created to build a frictionless lifestyle apparel marketplace with ultra-fast modern checkout flows.</p>
+            <!-- Reusable StackedCardCycler Widget (Matching Exact Reference) -->
+            <div class="stacked-card-cycler" id="csServiceCycler" data-widget="StackedCardCycler" aria-label="Services Stack">
+              <div class="stacked-card-deck">
+                <div class="stacked-card-item depth-0" data-card-idx="0">
+                  <span class="stacked-card-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
+                  </span>
+                  <span class="stacked-card-label">Websites design</span>
                 </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Wenny Mart</h3>
-                  <p class="case-card-category">Global Retail &amp; Lifestyle Brand</p>
+                <div class="stacked-card-item depth-1" data-card-idx="1">
+                  <span class="stacked-card-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                  </span>
+                  <span class="stacked-card-label">Web development</span>
                 </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Wenny Mart Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 5: Shohoz.com -->
-            <div class="card" data-index="4">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/shohoz.jpg" alt="Shohoz.com Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Shohoz was created to unify multi-vertical travel ticketing, bus, train, and logistics into one unified super-app.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Shohoz.com</h3>
-                  <p class="case-card-category">Super-App Mobility &amp; Logistics</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Shohoz.com Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 6: Akash DTH -->
-            <div class="card" data-index="5">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/akash_dth.jpg" alt="Akash DTH Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Akash DTH was created to deliver seamless smart TV entertainment, live channel packages, and self-care billing.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Akash DTH</h3>
-                  <p class="case-card-category">Smart TV &amp; Entertainment Platform</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Akash DTH Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 7: Startup Launch Tech -->
-            <div class="card" data-index="6">
-              <div class="case-media-frame">
-                <img src="assets/case-studies/startup_launch.jpg" alt="Startup Launch Tech Case Study" class="case-media-img" loading="lazy" />
-                <div class="case-hover-overlay">
-                  <p class="case-hover-desc">Startup Launch was created to optimize customer acquisition and real-time revenue analytics for high-growth tech ventures.</p>
-                </div>
-              </div>
-              <div class="case-card-meta-bar">
-                <div class="case-meta-left">
-                  <h3 class="case-card-title">Startup Launch Tech</h3>
-                  <p class="case-card-category">SaaS Platform &amp; Analytics</p>
-                </div>
-                <div class="case-meta-right">
-                  <a href="#contact" class="case-card-arrow-link" aria-label="View Startup Launch Tech Case Study">
-                    <span class="case-arrow-disc">↗</span>
-                  </a>
+                <div class="stacked-card-item depth-2" data-card-idx="2">
+                  <span class="stacked-card-icon">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="18" r="3"></circle><line x1="6" y1="9" x2="6" y2="15"></line><line x1="9" y1="18" x2="15" y2="18"></line><line x1="8.5" y1="7.5" x2="16.5" y2="16.5"></line></svg>
+                  </span>
+                  <span class="stacked-card-label">Brand identity</span>
                 </div>
               </div>
             </div>
 
           </div>
-        </div>
+        </aside>
 
-        <!-- Bottom Action CTA (Website Signature Rolling Button) -->
-        <div class="case-studies-bottom-action reveal-item delay-2">
-          <a href="#contact" class="button w-variant-brand primary-cta case-studies-bottom-btn">
-            <div class="button-content-block">
-              <div class="button-inner">
-                <span class="button-text">SEE ALL CASE STUDIES</span>
-                <div class="button-icon-wrapper">
-                  <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
-              </div>
-              <div class="button-inner absolute">
-                <span class="button-text">SEE ALL CASE STUDIES</span>
-                <div class="button-icon-wrapper">
-                  <svg class="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="7" y1="17" x2="17" y2="7"></line>
-                    <polyline points="7 7 17 7 17 17"></polyline>
-                  </svg>
-                </div>
+        <!-- RIGHT SCROLLING COLUMN (Full-Height Realistic 3D Scene Mockups) -->
+        <main class="split-cs-projects-stack" id="csProjectsStack">
+          
+          <!-- Scene 1: HOCL LABS (Luxury Skincare) -->
+          <article class="split-cs-scene-card" id="csCard0" data-index="0" data-accent="#de322d" data-category="Pitch decks" data-badge-icon="pitch" data-client="HOCL LABS" data-meta-tag="LUXURY SKINCARE" data-date="JULY 2025" style="position: relative; width: 100%; height: 100vh; min-height: 100vh; overflow: hidden;">
+            <div class="split-cs-scene-media-wrap custom-cursor-target" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden;">
+              <img src="assets/case-studies/hocl_skincare.jpg?v=5.0" alt="HOCL Labs Luxury Skincare" class="split-cs-scene-img" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block;" loading="eager" />
+              <div class="split-cs-scene-overlay"></div>
+            </div>
+            <div class="split-cs-scene-glass-chip">
+              <div class="split-cs-chip-date">JULY . 2025</div>
+              <div class="split-cs-chip-title-row">
+                <span class="split-cs-chip-brand">HOCL LABS</span>
+                <span class="split-cs-chip-dot">▪</span>
+                <span class="split-cs-chip-category" style="color: #de322d;">LUXURY SKINCARE</span>
               </div>
             </div>
-          </a>
-        </div>
+          </article>
 
+          <!-- Scene 2: FRAGILE BASE (Clothing Brand) -->
+          <article class="split-cs-scene-card" id="csCard1" data-index="1" data-accent="#de322d" data-category="Websites design" data-badge-icon="code" data-client="FRAGILE BASE" data-meta-tag="CLOTHING BRAND" data-date="MAR . 2025" style="position: relative; width: 100%; height: 100vh; min-height: 100vh; overflow: hidden;">
+            <div class="split-cs-scene-media-wrap custom-cursor-target" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden;">
+              <img src="assets/case-studies/fragile_base.jpg?v=5.0" alt="Fragile Base Streetwear Collection" class="split-cs-scene-img" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;" loading="lazy" />
+              <div class="split-cs-scene-overlay"></div>
+            </div>
+            <div class="split-cs-scene-glass-chip">
+              <div class="split-cs-chip-date">MAR . 2025</div>
+              <div class="split-cs-chip-title-row">
+                <span class="split-cs-chip-brand">FRAGILE BASE</span>
+                <span class="split-cs-chip-dot">▪</span>
+                <span class="split-cs-chip-category" style="color: #de322d;">CLOTHING BRAND</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Scene 3: AESTHETIC ORIGINS (Health Care) -->
+          <article class="split-cs-scene-card" id="csCard2" data-index="2" data-accent="#de322d" data-category="UI/UX design" data-badge-icon="sparkle" data-client="AESTHETIC ORIGINS" data-meta-tag="HEALTH CARE" data-date="APRIL . 2025" style="position: relative; width: 100%; height: 100vh; min-height: 100vh; overflow: hidden;">
+            <div class="split-cs-scene-media-wrap custom-cursor-target" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden;">
+              <img src="assets/case-studies/aesthetic_origins.jpg?v=5.0" alt="Aesthetic Origins Health Care Experience" class="split-cs-scene-img" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;" loading="lazy" />
+              <div class="split-cs-scene-overlay"></div>
+            </div>
+            <div class="split-cs-scene-glass-chip">
+              <div class="split-cs-chip-date">APRIL . 2025</div>
+              <div class="split-cs-chip-title-row">
+                <span class="split-cs-chip-brand">AESTHETIC ORIGINS</span>
+                <span class="split-cs-chip-dot">▪</span>
+                <span class="split-cs-chip-category" style="color: #de322d;">HEALTH CARE</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Scene 4: CLEAR DAY FUN (Ecotourism & 3D Booking) -->
+          <article class="split-cs-scene-card" id="csCard3" data-index="3" data-accent="#de322d" data-category="Brand identity" data-badge-icon="globe" data-client="CLEAR DAY" data-meta-tag="ECOTOURISM &amp; 3D" data-date="OCT . 2024" style="position: relative; width: 100%; height: 100vh; min-height: 100vh; overflow: hidden;">
+            <div class="split-cs-scene-media-wrap custom-cursor-target" style="position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden;">
+              <img src="assets/case-studies/clear_day_kayaks.jpg?v=6.0" alt="Clear Day Fun 3D Platform" class="split-cs-scene-img" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;" loading="lazy" />
+              <div class="split-cs-scene-overlay"></div>
+            </div>
+            <div class="split-cs-scene-glass-chip">
+              <div class="split-cs-chip-date">OCT . 2024</div>
+              <div class="split-cs-chip-title-row">
+                <span class="split-cs-chip-brand">CLEAR DAY</span>
+                <span class="split-cs-chip-dot">▪</span>
+                <span class="split-cs-chip-category" style="color: #de322d;">ECOTOURISM &amp; 3D</span>
+              </div>
+            </div>
+          </article>
+
+        </main>
+
+      </div>
+
+      <!-- Case Studies Custom Cursor (Pointer Dart + Attached VIEW PROJECT Floating Badge) -->
+      <div class="cs-custom-cursor-follower" id="csCustomCursor" aria-hidden="true">
+        <div class="cs-custom-cursor-wrap" id="csCustomCursorWrap">
+          <svg class="cs-custom-cursor-pointer" width="16" height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1 L15 7.5 L9.5 10 L6.5 16.5 Z" />
+          </svg>
+          <div class="cs-custom-cursor-badge">
+            <span class="cs-cursor-text">VIEW PROJECT</span>
+            <svg class="cs-cursor-arrow-icon" width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Section 1: OUR PROCESS (Scroll-Driven Red Timeline Progress) -->
-    <section class="process-section" id="ourProcess" data-component="OurProcess">
+    <section class="process-section" id="ourProcess" data-component="OurProcess" style="padding-top: 180px;">
       <div class="process-container">
         
         <!-- Header -->
@@ -990,7 +957,7 @@
             <span class="tag-text">OUR PROCESS</span>
           </div>
           
-          <h2 class="process-heading">
+          <h2 class="process-heading scroll-fill-text">
             <span class="heading-line-primary">A SIMPLER WAY TO CREATE</span>
             <span class="heading-line-faded">AND BUILD DIGITAL EXPERIENCES</span>
           </h2>
@@ -1145,7 +1112,7 @@
             </div>
 
             <!-- Signature 2-Tone Headline (Primary Black + Faded Gray) -->
-            <h2 class="pricing-cta-headline">
+            <h2 class="pricing-cta-headline scroll-fill-text">
               <span class="heading-line-primary">SIMPLE PRICING.</span>
               <span class="heading-line-faded">NO SURPRISES.</span>
             </h2>
@@ -1198,7 +1165,7 @@
             </span>
             <span class="tag-text">TESTIMONIALS</span>
           </div>
-          <h2 class="testimonials-heading">
+          <h2 class="testimonials-heading scroll-fill-text">
             <span class="heading-line-primary">WHAT OUR CLIENTS</span>
             <span class="heading-line-faded">SAY ABOUT WORKING WITH US.</span>
           </h2>
@@ -1268,7 +1235,6 @@
           
           <!-- LEFT COLUMN (35-40%): Heading & Contact Card -->
           <div class="faq-left-col reveal-item">
-            
             <div class="tag-wrapper">
               <span class="tag-plus-box">
                 <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
@@ -1276,7 +1242,7 @@
               <span class="tag-text">FAQ</span>
             </div>
 
-            <h2 class="faq-main-heading">
+            <h2 class="faq-main-heading scroll-fill-text">
               <span class="heading-line-primary">GOT QUESTIONS?</span>
               <span class="heading-line-faded">WE'VE GOT ANSWERS.</span>
             </h2>
@@ -1357,7 +1323,7 @@
             <span class="tag-text">OUR BLOG</span>
           </div>
 
-          <h2 class="blog-heading">
+          <h2 class="blog-heading scroll-fill-text">
             <span class="heading-line-primary">STORIES, INSIGHTS,</span>
             <span class="heading-line-faded">TIPS, AND DIGITAL THINKING.</span>
           </h2>
@@ -1421,8 +1387,8 @@
               <span class="tag-text">GET STARTED</span>
             </div>
 
-            <!-- Signature 2-Tone Headline -->
-            <h2 class="get-started-headline">
+            <!-- Signature 2-Tone Headline with Scroll Fill -->
+            <h2 class="get-started-headline scroll-fill-text" data-component="ScrollFillText" data-scroll-fill-start="top 85%" data-scroll-fill-end="bottom 55%">
               <span class="heading-line-primary">TRANSFORM YOUR</span>
               <span class="heading-line-faded">IDEAS TODAY.</span>
             </h2>
@@ -1521,10 +1487,10 @@
             <!-- Column 3 -->
             <div class="footer-nav-col has-divider">
               <ul class="footer-nav-list">
-                <li><a href="#styleguide" class="footer-nav-link">Style Guide</a></li>
-                <li><a href="#changelog" class="footer-nav-link">Changelog</a></li>
+                <li><a href="terms.html" class="footer-nav-link">Terms of Service</a></li>
+                <li><a href="privacy.html" class="footer-nav-link">Privacy Policy</a></li>
                 <li><a href="#license" class="footer-nav-link">License</a></li>
-                <li><a href="#privacy" class="footer-nav-link">Password</a></li>
+                <li><a href="#styleguide" class="footer-nav-link">Style Guide</a></li>
                 <li><a href="404.html" class="footer-nav-link">404</a></li>
               </ul>
             </div>
@@ -1543,7 +1509,10 @@
 
   </div>
 
-  <!-- Scripts -->
-  <script src="main.js"></script>
+  <!-- Scripts (Lenis Smooth Scroll, GSAP, ScrollTrigger & App Logic) -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="main.js?v=9.0"></script>
 </body>
 </html>
