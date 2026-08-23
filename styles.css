@@ -1083,7 +1083,7 @@ a.button:hover,
 
 .video-showcase-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1120px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -1093,7 +1093,7 @@ a.button:hover,
 .video-showcase-header-block {
   width: 100%;
   max-width: 860px;
-  margin: 0 auto 36px;
+  margin: 0 auto 34px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -1111,18 +1111,18 @@ a.button:hover,
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1560px;
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 .video-frame {
   position: relative;
-  width: min(90vw, 1400px);
-  aspect-ratio: 16 / 10;
-  border-radius: 22px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   transform-origin: center center;
   will-change: transform, border-radius;
   background-color: #000;
@@ -1134,7 +1134,7 @@ a.button:hover,
   justify-content: center;
   align-items: center;
   z-index: 15;
-  margin-top: 36px;
+  margin-top: 32px;
 }
 
 .showcase-video {
