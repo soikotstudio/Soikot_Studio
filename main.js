@@ -4,6 +4,43 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Register GSAP ScrollTrigger if available
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Initialize Lenis Smooth Scrolling & sync with GSAP ScrollTrigger
+  let lenisInstance = null;
+  if (typeof Lenis !== 'undefined') {
+    lenisInstance = new Lenis({
+      duration: 1.15,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.5,
+      infinite: false,
+    });
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      lenisInstance.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenisInstance.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    } else {
+      function raf(time) {
+        lenisInstance.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+    }
+
+    // Expose lenis globally for interactive programmatic scroll anchors
+    window.lenis = lenisInstance;
+  }
+
   // Mobile Hamburger Toggle
   const hamburgerBtn = document.getElementById('hamburgerBtn');
   const navMenu = document.getElementById('navMenu');

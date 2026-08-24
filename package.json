@@ -1,0 +1,25 @@
+{
+  "name": "soikot-studio",
+  "version": "1.0.0",
+  "description": "A high-end editorial digital agency website featuring interactive WebGL/3D aesthetics, full-bleed scroll-pinned disciplines, depth flip case study carousels with hover-blur reveals, custom video showcase player, and mechanical slot-counter metrics.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soikotstudio/Soikot_Studio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/soikotstudio/Soikot_Studio/issues"
+  },
+  "homepage": "https://github.com/soikotstudio/Soikot_Studio#readme",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.26"
+  }
+}
