@@ -1,15 +1,10 @@
 ---
-name: web-design-guidelines
-description: Review UI code for Web Interface Guidelines compliance. Use when asked to "review my UI", "check accessibility", "audit design", "review UX", or "check my site against best practices".
-metadata:
-  author: vercel
-  version: "1.0.0"
-  argument-hint: <file-or-pattern>
+description: "Review docs/prose for Writing Guidelines compliance. Use when asked to \"review my docs\", \"check writing style\", \"audit prose\", \"review docs voice and tone\", or \"check this page against the writing handbook\"."
+metadata: {"author":"vercel","version":"1.0.0","argument-hint":"<file-or-pattern>"}
 ---
+# Writing Guidelines
 
-# Web Interface Guidelines
-
-Review files for compliance with Web Interface Guidelines.
+Review files for compliance with Writing Guidelines.
 
 ## How It Works
 
@@ -23,7 +18,7 @@ Review files for compliance with Web Interface Guidelines.
 Fetch fresh guidelines before each review:
 
 ```
-https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/main/command.md
+https://raw.githubusercontent.com/vercel-labs/writing-guidelines/main/command.md
 ```
 
 Use WebFetch to retrieve the latest rules. The fetched content contains all the rules and output format instructions.
